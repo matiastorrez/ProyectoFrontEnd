@@ -1,0 +1,308 @@
+:root {
+  --textColor: #676464;
+  --backgroundColor: #f6c47b;
+  --lineSeparatorColor: #f48a69;
+}
+
+* {
+  font-family: "Aleo", serif;
+}
+
+.border123 {
+  border: 2px red solid;
+}
+
+/*all*/
+
+.ms-icon-delete {
+  font-size: 32px !important;
+}
+
+.ms-icon-add {
+  font-size: 32px !important;
+}
+
+.ms-icon-edit {
+  font-size: 32px !important;
+}
+
+.ms-separator-line {
+  border: 3px var(--textColor) solid;
+  background-color: var(--textColor);
+  margin: 0px;
+}
+
+.ms-title-section {
+  font-size: 40px !important;
+  filter: drop-shadow(0px 1px 5px rgba(103, 100, 100, 5));
+  color: var(--textColor);
+}
+
+/*--------all---------*/
+
+/* Header */
+
+.ms-nav-background-color {
+  background-color: var(--backgroundColor) !important;
+}
+
+.ms-nav-container {
+  background-color: var(--backgroundColor) !important;
+  height: 110px;
+}
+
+.ms-nav-shadow {
+  filter: drop-shadow(0px 1px 5px rgba(103, 100, 100, 5));
+}
+
+.ms-nav-title {
+  font-size: 32px;
+  color: var(--textColor);
+}
+
+.ms-nav-icon {
+  font-size: 48px;
+  color: var(--textColor);
+}
+
+.ms-button-login {
+  font-size: 32px;
+  text-decoration: none;
+  background-color: var(--textColor);
+  color: var(--backgroundColor);
+  white-space: pre;
+  border-radius: 15px;
+  border: 1px black solid;
+}
+
+/* -------------------fin Header---------- */
+
+/*--------------seccion datos personales---------------*/
+
+.ms-img-banner {
+  height: 443px;
+  width: 100% !important;
+}
+
+.ms-img-profile {
+  height: 256px;
+  width: 256px;
+  border-radius: 50%;
+  margin-top: -150px;
+  background-color: var(--textColor);
+}
+
+.ms-personal-information {
+  font-size: 24px;
+}
+
+.ms-option-buttons {
+  background-color: var(--backgroundColor);
+}
+
+.ms-option-button {
+  background-color: var(--backgroundColor);
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0px 20px;
+}
+
+/*-------------fin seccion datos personales----------*/
+
+/*---------Seccion sobre mi-----------*/
+
+.ms-paragraph-section {
+  font-size: 24px !important;
+}
+
+/*---------fin seccion sobre mi-----------*/
+
+/*---------Seccion Mis estudios-----------*/
+
+.ms-study-container {
+  padding-left: 30px !important;
+}
+
+.ms-study-image {
+  width: 128px;
+  height: 128px;
+}
+
+.ms-study-title {
+  font-size: 32px !important;
+  color: var(--textColor);
+}
+
+.ms.study-description {
+  font-size: 24px !important;
+  color: var(--textColor);
+}
+
+/*---------fin seccion Mis estudios-----------*/
+
+/*---------seccion Mis proyectos-----------*/
+
+.ms-project-container {
+  padding-left: 30px !important;
+}
+
+.ms-project-title {
+  font-size: 32px !important;
+  color: var(--textColor);
+}
+
+.ms.project-description {
+  font-size: 24px !important;
+  color: var(--textColor);
+}
+
+/*---------fin seccion Mis proyectos-----------*/
+
+/*---------seccion Mi experiencia laboral-----------*/
+
+.ms-experience-container {
+  padding-left: 30px !important;
+}
+
+.ms-experience-image {
+  width: 128px;
+  height: 128px;
+}
+
+.ms-experience-title {
+  font-size: 32px !important;
+  color: var(--textColor);
+}
+
+.ms.experience-description {
+  font-size: 24px !important;
+  color: var(--textColor);
+}
+
+/*---------fin seccion experiencia laboral-----------*/
+
+.ms-skill-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.ms-skill-container .ms-skill-card {
+  position: relative;
+}
+
+.ms-skill-container .ms-skill-card .ms-skill-percent {
+  position: relative;
+  width: 256px;
+  height: 256px;
+}
+
+.ms-skill-container .ms-skill-card .ms-skill-percent svg{
+  position: relative;
+  width: 256px;
+  height: 256px;
+  transform: rotate(270deg);
+
+}
+
+.ms-skill-container .ms-skill-card .ms-skill-percent svg circle{
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 10;
+  stroke: var(--textColor);
+  transform: translate(5px,5px);
+}
+
+.ms-skill-container .ms-skill-card .ms-skill-percent svg circle:nth-child(2){
+  stroke: var(--clr);
+  stroke-dasharray: 770;
+  stroke-dashoffset: calc(770 - (770 * var(--num)) /100);
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%
+  {opacity: 1;}
+}
+
+.ms-skill-dot{
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  animation: animateDot 2s linear forwards;
+}
+
+@keyframes animateDot {
+
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+     transform: rotate(calc(3.6deg * var(--num)));
+  }
+  
+}
+
+
+.ms-skill-dot::before{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--clr);
+
+  box-shadow: 0 0 10px var(--clr),
+  0 0 30px var(--clr);
+}
+
+
+.ms-skill-number{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+   opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2s;
+}
+
+.ms-skill-number h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.ms-skill-number h2 span{
+  color: black;
+  font-weight: 300;
+  font-size: 0.5em;
+}
+
+.ms-skill-number p{
+  font-weight: 300;
+  font-size: 1em;
+  width: 90%;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+
